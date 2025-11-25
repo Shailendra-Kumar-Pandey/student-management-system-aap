@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Student Data</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Student Data</h1>
+
+            <input class="search-bar" type="text" placeholder="Search Student" id="searchInput" onkeyup="findStudent(this.value)">
+            <button onclick="findData()">Search</button>
+        </div>
+        <button onclick="getAllStudents()">Get All Students</button>
+        <button onclick="openClose('addModal')">Add Student</button>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Class</th>
+                        <th>Mobile No</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tBody">
+                    <!-- <tr>
+                            <td>1</td>
+                            <td>Shailendera Kumar Pandey</td>
+                            <td>shailendera@gmail.com</td>
+                            <td>MBA</td>
+                            <td>9806638963</td>
+                            <td>
+                                <button class="action-btn edit-btn" onclick="openClose('editModal')">Edit</button>
+                                <button class="action-btn delete-btn" onclick="openClose('deleteModal')">Delete</button>
+                                <i class="fa-solid fa-eye-slash" style="color: #B197FC;"></i>
+                            </td>
+                    </tr>  -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Add New Student Modal -->
+    <div class="modal" id="addModal">
+        <div class="modal-content">
+            <button id="btn-close" onclick="openClose('addModal')"> X </button>
+            <h2>Add New Student</h2>
+            <div class="inner-content">
+                <input type="text" placeholder="Enter Student Name" onkeyup="addNewStudentData('name', this.value)">
+                <input type="email" placeholder="Enter Email" onkeyup="addNewStudentData('email', this.value)" >
+                <input type="text" placeholder="Enter Class" onkeyup="addNewStudentData('class', this.value)" >
+                <input type="tel" placeholder="Enter Mobile No" onkeyup="addNewStudentData('mobile', this.value)" >
+                <button class="btn_style" onclick="addNewStudent()">Add New Student</button>
+            </div>
+        </div>     
+    </div>
+
+    <!-- Edit Student Modal -->
+     <div class="modal" id="editModal">
+        <div class="modal-content">
+            <button id="btn-close" onclick="openClose('editModal')"> X </button>
+            <h2>Update Student Data</h2>
+            <div class="inner-content">
+                <input type="text" placeholder="Enter Student Name" onkeyup="updateStudent('name', this.value)"  id="name">
+                <input type="email" placeholder="Enter Email" onkeyup="updateStudent('email', this.value)" id="email">
+                <input type="text" placeholder="Enter Class" onkeyup="updateStudent('class', this.value)" id="class">
+                <input type="tel" placeholder="Enter Mobile No" onkeyup="updateStudent('mobile', this.value)" id="mobile">
+                <button class="btn_style" onclick="updateStudentData()">Update Student Data</button>
+            </div>
+        </div>     
+    </div>
+
+    <!-- Delete Student Modal -->
+     <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <button id="btn-close" onclick="openClose('deleteModal')"> X </button>
+            <h2>Delete Student</h2>
+            <p>Are you sure you want to delete this Student?</p>
+            <button onclick="confirmStudent()" class="btn_style" id="confirm"> Yes </button>
+            <button class="btn_style" value="false" onclick="openClose('deleteModal')"> Cancel </button>
+        </div>     
+    </div>
+
+    <!-- Show Personal Detailes Student Modal -->
+     <div class="modal" id="personalModel">
+        <div class="modal-content">
+            <button id="btn-close" onclick="openClose('personalModel')"> X </button>
+            <h2 id="studentHead">Student Data</h2>
+            <p id="singleData">Are you sure you want to delete this Student?</p>
+            <button class="btn_style" value="false" onclick="openClose('personalModel')"> Ok </button>
+        </div>     
+    </div>
+
+    <!-- Show the Search Student Modal -->
+     <div class="modal" id="studentModel">
+        <div class="modal-content search-modal" >
+            <button id="btn-close" onclick="openClose('studentModel')"> X </button>
+            <h2 id="noData" style="text-align: center;">Search Student Data</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Class</th>
+                        <th>Mobile No</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="SBody">
+                    <!-- <tr>
+                            <td>1</td>
+                            <td>Shailendera Kumar Pandey</td>
+                            <td>shailendera@gmail.com</td>
+                            <td>MBA</td>
+                            <td>9806638963</td>
+                            <td>
+                                <i class="fa-solid fa-eye-slash" style="color: #B197FC;"></i>
+                            </td>
+                    </tr>  -->
+                </tbody>
+            </table>
+        </div>     
+    </div>
+
+    <script src="./app.js"></script>
+
+
+</body>
+</html>
