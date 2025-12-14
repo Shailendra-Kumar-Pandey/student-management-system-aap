@@ -53,9 +53,9 @@
             <h2>Add New Student</h2>
             <div class="inner-content">
                 <input type="text" placeholder="Enter Student Name" onkeyup="addNewStudentData('name', this.value)">
-                <input type="email" placeholder="Enter Email" onkeyup="addNewStudentData('email', this.value)" >
+                <input type="email" required placeholder="Enter Email" onkeyup="addNewStudentData('email', this.value)" >
                 <input type="text" placeholder="Enter Class" onkeyup="addNewStudentData('class', this.value)" >
-                <input type="tel" placeholder="Enter Mobile No" onkeyup="addNewStudentData('mobile', this.value)" >
+                <input type="number" required placeholder="Enter Mobile No" onkeyup="addNewStudentData('mobile', this.value)" >
                 <button class="btn_style" onclick="addNewStudent()">Add New Student</button>
             </div>
         </div>     
@@ -68,9 +68,9 @@
             <h2>Update Student Data</h2>
             <div class="inner-content">
                 <input type="text" placeholder="Enter Student Name" onkeyup="updateStudent('name', this.value)"  id="name">
-                <input type="email" placeholder="Enter Email" onkeyup="updateStudent('email', this.value)" id="email">
+                <input type="email" required placeholder="Enter Email" onkeyup="updateStudent('email', this.value)" id="email">
                 <input type="text" placeholder="Enter Class" onkeyup="updateStudent('class', this.value)" id="class">
-                <input type="tel" placeholder="Enter Mobile No" onkeyup="updateStudent('mobile', this.value)" id="mobile">
+                <input type="number" required placeholder="Enter Mobile No" onkeyup="updateStudent('mobile', this.value)" id="mobile">
                 <button class="btn_style" onclick="updateStudentData()">Update Student Data</button>
             </div>
         </div>     

@@ -187,7 +187,7 @@ function updateStudentData(){
 
     displayAllData(studentData);
     openClose('editModal')
-    alert(`Successfully ${student.name} student data updated...!`);
+    // alert(`Successfully ${student.name} student data updated...!`);
 
     student = {
             name : null,
@@ -226,7 +226,7 @@ function confirmStudent(){
 
     openClose('deleteModal')
 
-    alert(`Delete Student Successfully...`);
+    // alert(`Delete Student Successfully...`);
 }
 
 // Single Student Data Find and Show
