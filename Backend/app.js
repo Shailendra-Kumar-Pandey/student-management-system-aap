@@ -2,10 +2,10 @@ import express from 'express';
 import adminAPI from './Admin Router/adminRouter.js'
 const app = express();
 
-// Build Middleware
+// Build in Middleware
 app.use(express.json());
 
-// Router Middleware
+// Router 
 app.use('/admin', adminAPI);
 
 app.listen(2000, ()=>{
