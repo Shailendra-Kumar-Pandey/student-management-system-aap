@@ -1,10 +1,10 @@
 // frontend logic
 
-const baseURL = "http://localhost:2000";
-const URLgetAllStudents = "/getAllStudents";
-const URLdeleteStudent = "/deleteStudent";
+const baseURL = "http://localhost:2000/admin";
+const URLgetAllStudents = "/getAllStudent";
+const URLdeleteStudent = "/deleteStudentData";
 const URLaddNewStudent = "/addNewStudent";
-const URLupdateStudentdata = "/updateStudentdata";
+const URLupdateStudentdata = "/updateStudentData";
 const URLsingleStudentData = "/singleStudentData";
 
 //get api
